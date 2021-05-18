@@ -1,0 +1,18 @@
+.hero {
+	padding-top: 358px;
+	padding-bottom: 242px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	@media (max-width: 1200px) {
+		@include adaptiv(padding-bottom, 242, 100, 1200, 320);
+		@include adaptiv(padding-top, 358, 100, 1200, 320);
+	}
+	// .hero__container
+	&__container {
+	}
+	// .hero__title
+	&__title {
+		max-width: 875px;
+	}
+}

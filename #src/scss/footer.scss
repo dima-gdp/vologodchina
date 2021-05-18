@@ -1,0 +1,119 @@
+.footer {
+	padding-bottom: 93px;
+	@media (max-width: 992px) {
+		@include adaptiv(padding-bottom, 93, 45, 992, 320);
+	}
+	// .footer__container
+	&__container {
+	}
+	// .footer__grid
+	&__grid {
+		padding-top: 77px;
+		display: grid;
+		grid-template-columns: 376px 18% 18% 174px;
+		grid-column-gap: 60px;
+		grid-row-gap: 50px;
+		justify-content: space-between;
+		border-top: 1px solid #dedede;
+		@media (max-width: 1300px) {
+			grid-template-columns: 228px 1fr 1fr 174px;
+		}
+		@media (max-width: 1200px) {
+			grid-template-columns: 1fr;
+		}
+		@media (max-width: 992px) {
+			@include adaptiv(padding-top, 93, 77, 992, 320);
+		}
+		@media (max-width: 576px) {
+			grid-row-gap: 40px;
+		}
+		@media (max-width: 374px) {
+			grid-row-gap: 30px;
+		}
+	}
+	// .footer__col
+	&__col {
+		@media (max-width: 1200px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			&:nth-child(1) {
+				order: 3;
+			}
+			&:nth-child(2) {
+				order: 0;
+			}
+			&:nth-child(3) {
+				order: 1;
+			}
+			&:nth-child(4) {
+				order: 2;
+			}
+		}
+	}
+	// .footer__logo
+	&__logo {
+		margin-bottom: 51px;
+		@media (max-width: 1300px) {
+			.logo__text {
+				display: none;
+			}
+		}
+		@media (max-width: 420px) {
+			margin-bottom: 20px;
+		}
+	}
+	// .footer__privacy
+	&__privacy {
+		p {
+			font-size: 14px;
+			line-height: 1.43;
+			@media (max-width: 1300px) {
+				font-size: 12px;
+			}
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+		a {
+			color: #000000;
+		}
+	}
+	// .footer__nav
+	&__nav {
+		li {
+			&:not(:last-child) {
+				margin-bottom: 18px;
+				@media (max-width: 1380px) {
+					margin-bottom: 15px;
+				}
+			}
+			a {
+				font-weight: 700;
+				line-height: 1.44;
+				text-transform: uppercase;
+				color: #000000;
+				@media (max-width: 1440px) {
+					font-size: 17px;
+				}
+				@media (max-width: 1380px) {
+					font-size: 16px;
+				}
+				@media (max-width: 420px) {
+					font-size: 15px;
+				}
+				@media (max-width: 374px) {
+					font-size: 14px;
+				}
+				&:hover {
+					color: #0b5dc1;
+				}
+			}
+		}
+	}
+	// .footer__social
+	&__social {
+		// justify-content: flex-end;
+	}
+}

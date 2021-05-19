@@ -1,0 +1,38 @@
+.partners {
+	margin-bottom: 159px;
+	@media (max-width: 1400px) {
+		@include adaptiv(margin-bottom, 159, 40, 1400, 320);
+	}
+	// .partners__container
+	&__container {
+	}
+	// .partners__title
+	&__title {
+		margin-bottom: 84px;
+		@media (max-width: 1440px) {
+			@include adaptiv(margin-bottom, 84, 20, 1440, 320);
+		}
+	}
+	// .partners__slider
+	&__slider {
+		overflow: hidden;
+		width: 100%;
+		// .swiper-wrapper {
+		// 	align-items: center;
+		// }
+	}
+	// .partners__logo
+	&__logo {
+		display: flex;
+		justify-content: center;
+		img {
+			max-height: 74px;
+		}
+	}
+	&__control {
+		margin-top: 91px;
+		@media (max-width: 768px) {
+			margin-top: 50px;
+		}
+	}
+}

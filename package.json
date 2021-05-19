@@ -19,5 +19,8 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-tinypng-compress": "^1.2.5",
     "node-sass": "^5.0.0"
+  },
+  "dependencies": {
+    "air-datepicker": "^2.2.3"
   }
 }

@@ -1,6 +1,11 @@
 $(document).ready(function () {
 
-	// objectFitImages();
+	objectFitImages();
+
+	$('.calendar').datepicker({
+		inline: true,
+	})
+
 
 	// Табы
 	// function tabs(buttonsList, wrapper, tabBlock) {
@@ -75,6 +80,50 @@ $(document).ready(function () {
 	// 		}
 	// 	}
 	// }
+
+	const slider_partners = new Swiper('.partners__slider', {
+		slidesPerView: 6,
+		spaceBetween: 60,
+		loop: true,
+		// autoplay: {
+		// 	delay: 4000,
+		// },
+		pagination: {
+			el: '.swiper-pagination',
+			type: 'bullets',
+			clickable: true
+		},
+		navigation: {
+			nextEl: '.partners__next',
+			prevEl: '.partners__prev',
+		},
+		breakpoints: {
+			320: {
+				slidesPerView: 1,
+				spaceBetween: 20,
+			},
+			375: {
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
+			576: {
+				slidesPerView: 3,
+				spaceBetween: 40,
+			},
+			768: {
+				slidesPerView: 4,
+				spaceBetween: 40,
+			},
+			993: {
+				slidesPerView: 5,
+				spaceBetween: 40,
+			},
+			1300: {
+				slidesPerView: 6,
+				spaceBetween: 60,
+			},
+		}
+	});
 
 	// Fancy-box
 

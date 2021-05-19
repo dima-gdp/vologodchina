@@ -1,0 +1,150 @@
+.events {
+	// .events__container
+	&__container {
+	}
+	// .events__title
+	&__title {
+		margin-bottom: 93px;
+	}
+	// .events__flex
+	&__flex {
+	}
+}
+
+.flex-events {
+	display: flex;
+	justify-content: space-between;
+	// .flex-events__left
+	&__left {
+		flex: 0 0 468px;
+	}
+	// .flex-events__right
+	&__right {
+		margin-left: 50px;
+		max-width: 730px;
+		flex: 1 1 auto;
+	}
+	// .flex-events__item
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 60px;
+		}
+	}
+	.datepicker {
+		width: 100%;
+		border: none;
+	}
+	.datepicker--content {
+		padding: 0;
+	}
+	.datepicker--nav {
+		border: none;
+		padding: 0;
+		margin-bottom: 65px;
+	}
+	.datepicker--nav-action {
+		transition: 0.3s;
+		&:hover {
+			filter: brightness(0%);
+		}
+		svg {
+			display: none;
+		}
+		&[data-action="prev"] {
+			background: url("../svg/cal-prev.svg") 50% 50% / 9px 15px no-repeat;
+		}
+		&[data-action="next"] {
+			background: url("../svg/cal-next.svg") 50% 50% / 9px 15px no-repeat;
+		}
+	}
+	.datepicker--nav-title {
+		margin-left: 10px;
+		padding: 7px 17px;
+		border: 1px solid #0b5dc1;
+		border-radius: 30px;
+		font-size: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #000;
+		i {
+			color: #000;
+		}
+	}
+	.datepicker--cell,
+	.datepicker--day-name {
+		font-family: "Gilroy";
+		font-size: 20px;
+		color: #000000;
+	}
+	.-weekend- {
+		color: #ff1100;
+	}
+	.datepicker--cell-day {
+		transition: color 0.3s;
+		width: 46.4px;
+		height: 46.4px;
+		margin: 3px 10px;
+		transition: 0.3s;
+		border-radius: 100%;
+	}
+	.datepicker--cell-day.-focus-,
+	.-selected- {
+		color: #fff;
+		background: #0b5dc1;
+	}
+
+	.datepicker--cell-month.-focus-,
+	.datepicker--cell-year.-focus-,
+	.-selected- {
+		color: #fff;
+		background: #0b5dc1;
+	}
+
+	.-other-month- {
+		&:not(.-weekend-) {
+			color: #dedede;
+		}
+	}
+	.-other-month-.-weekend- {
+		color: #ff9e97;
+	}
+
+	.datepicker--cell-day.-current- {
+		border-radius: 100%;
+		border: 1px solid $blue;
+	}
+	.datepicker--cell-month.-current- {
+		border: 1px solid $blue;
+	}
+	.datepicker--cell-year.-current- {
+		border: 1px solid $blue;
+	}
+	.datepicker--days-names {
+		margin: 0;
+	}
+}
+.calendar {
+}
+.item-events {
+	// .item-events__date
+	&__date {
+		margin-bottom: 10px;
+		font-family: "Open Sans";
+		font-style: italic;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 1.4;
+		color: #000000;
+	}
+	// .item-events__title
+	&__title {
+		margin-bottom: 10px;
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 1.27;
+		color: #000000;
+	}
+	// .item-events__text
+	&__text {
+	}
+}

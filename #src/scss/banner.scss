@@ -1,0 +1,10 @@
+.banner {
+	margin-bottom: 152px;
+	@media (max-width: 1400px) {
+		@include adaptiv(margin-bottom, 152, 40, 1400, 320);
+	}
+	// .banner__container
+	&__container {
+		padding: 0 !important;
+	}
+}

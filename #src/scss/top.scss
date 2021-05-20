@@ -1,37 +1,33 @@
 .top {
 	margin-bottom: 175px;
+	@media (max-width: 1200px) {
+		@include adaptiv(margin-bottom, 175, 90, 1200, 320);
+	}
 	// .top__container
 	&__container {
 	}
 	// .top__title
 	&__title {
 		margin-bottom: 86px;
+		@media (max-width: 1200px) {
+			@include adaptiv(margin-bottom, 86, 35, 1200, 320);
+		}
 	}
 	// .top__grid
 	&__grid {
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		grid-column-gap: 60px;
-		grid-row-gap: 60px;
+		@media (min-width: 1200px) {
+			grid-column-gap: 60px;
+		}
+
+		@media (min-width: 993px) {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-column-gap: 40px;
+			grid-row-gap: 60px;
+		}
 	}
 	// .top__col
 	&__col {
-		grid-column: span 3;
-		&:nth-child(1),
-		&:nth-child(2),
-		&:nth-child(3) {
-			grid-column: span 4;
-
-			.item-top__image {
-				padding-bottom: 100%;
-				overflow: hidden;
-			}
-
-			.item-top__count {
-				font-size: 200px;
-			}
-		}
-
 		&:nth-child(1),
 		&:nth-child(3) {
 			.item-top__image {
@@ -44,40 +40,118 @@
 				border-top-right-radius: 50%;
 			}
 		}
+
+		@media (min-width: 1200px) {
+			grid-column: span 3;
+		}
+
+		@media (min-width: 993px) {
+			grid-column: span 4;
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3) {
+				grid-column: span 4;
+
+				.item-top__image {
+					padding-bottom: 100%;
+				}
+
+				.item-top__count {
+					font-size: 200px;
+					@media (max-width: 1199px) {
+						font-size: 140px;
+					}
+				}
+
+				.item-top__title {
+					font-size: 30px;
+					line-height: 1.27;
+					@media (max-width: 1199px) {
+						@include adaptiv(font-size, 30, 24, 1199, 993);
+					}
+				}
+
+				.item-top__subtitle {
+					font-size: 18px;
+					line-height: 1.44;
+					color: #000;
+					@media (max-width: 1100px) {
+						font-size: 17px;
+					}
+				}
+			}
+		}
 	}
 	// .top__item
 	&__item {
 	}
 
 	&__slider {
+		overflow: hidden;
 		.swiper-wrapper {
-			position: static;
-			width: 100%;
-			height: auto;
-			z-index: 1;
-			// display: flex;
-			transition-property: transform;
-			box-sizing: border-box;
-
-			// position: relative;
-			// width: 100%;
-			// height: 100%;
-			// z-index: 1;
-			// display: flex;
-			// transition-property: transform;
-			// box-sizing: border-box;
+			@media (min-width: 993px) {
+				position: static;
+				width: 100%;
+				height: auto;
+				z-index: 1;
+				// display: grid;
+				transition-property: transform;
+				box-sizing: border-box;
+			}
 		}
+	}
+
+	// .top__control
+	&__control {
+		display: none;
+		@media (max-width: 992px) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 60px;
+		}
+		@media (max-width: 576px) {
+			margin-top: 40px;
+		}
+		@media (max-width: 420px) {
+			margin-top: 30px;
+		}
+	}
+	// .top__prev
+	&__prev {
+	}
+	// .top__next
+	&__next {
 	}
 }
 .item-top {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	&:hover {
+		.item-top__image img {
+			transform: scale(1.1);
+		}
+		.item-top__title {
+			color: $blue;
+		}
+	}
 	// .item-top__image
 	&__image {
 		margin-bottom: 27px;
 		padding-bottom: 72.8%;
 		position: relative;
+		overflow: hidden;
+
+		@media (max-width: 992px) {
+			padding-bottom: 100%;
+		}
+		@media (max-width: 576px) {
+			margin-bottom: 20px;
+		}
+		@media (max-width: 420px) {
+			margin-bottom: 30px;
+		}
 		img {
 			position: absolute;
 			top: 0;
@@ -87,6 +161,7 @@
 			object-fit: cover;
 			object-position: center;
 			font-family: "object-fit: cover; object-position: center;";
+			transition: 0.3s;
 		}
 	}
 	// .item-top__count
@@ -104,19 +179,44 @@
 		color: #ffffff;
 		pointer-events: none;
 		user-select: none;
+		@media (max-width: 1199px) {
+			font-size: 90px;
+		}
 	}
 	// .item-top__title
 	&__title {
 		margin-bottom: 10px;
 		font-weight: 700;
-		font-size: 30px;
-		line-height: 1.27;
+		font-size: 20px;
+		line-height: 1.4;
 		color: #000;
+		transition: 0.3s;
+		@media (max-width: 900px) {
+			font-size: 19px;
+		}
+		@media (max-width: 830px) {
+			font-size: 18px;
+		}
+		@media (max-width: 768px) {
+			@include adaptiv(font-size, 20, 16, 768, 421);
+		}
+		@media (max-width: 420px) {
+			font-size: 20px;
+		}
 	}
 	// .item-top__subtitle
 	&__subtitle {
-		font-size: 18px;
-		line-height: 1.44;
+		font-size: 16px;
+		line-height: 1.5;
 		color: #000;
+		@media (max-width: 850px) {
+			font-size: 15px;
+		}
+		@media (max-width: 768px) {
+			@include adaptiv(font-size, 16, 14, 768, 421);
+		}
+		@media (max-width: 420px) {
+			font-size: 16px;
+		}
 	}
 }

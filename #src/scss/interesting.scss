@@ -1,5 +1,8 @@
 .interesting {
 	margin-bottom: 150px;
+	@media (max-width: 1300px) {
+		@include adaptiv(margin-bottom, 150, 45, 1300, 320);
+	}
 	// .interesting__container
 	&__container {
 	}
@@ -8,24 +11,55 @@
 		display: flex;
 		align-items: flex-end;
 		margin-bottom: 64px;
+		@media (max-width: 1200px) {
+			justify-content: space-between;
+		}
+		@media (max-width: 576px) {
+			margin-bottom: 50px;
+		}
+		@media (max-width: 420px) {
+			margin-bottom: 44px;
+		}
 	}
 	// .interesting__left
 	&__left {
 		margin-right: 130px;
 		max-width: 791px;
+		@media (max-width: 1200px) {
+			margin-right: 50px;
+		}
+		@media (max-width: 768px) {
+			margin-right: 0;
+			max-width: 600px;
+		}
 	}
 	// .interesting__title
 	&__title {
+		@media (max-width: 1660px) {
+			@include adaptiv(font-size, 72, 52, 1660, 1300);
+		}
+		@media (max-width: 1300px) {
+			@include adaptiv(font-size, 52, 30, 1200, 320);
+		}
 	}
 	// .interesting__right
 	&__right {
 		max-width: 365px;
 		width: 100%;
+		@media (max-width: 992px) {
+			max-width: 280px;
+		}
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
 	// .interesting__images
 	&__images {
 		padding-right: 30px;
 		position: relative;
+		@media (max-width: 992px) {
+			padding-right: 20px;
+		}
 	}
 	// .interesting__image
 	&__image {
@@ -52,11 +86,38 @@
 		right: 0;
 		max-width: 102px;
 		max-height: 120px;
+		@media (max-width: 992px) {
+			max-width: 80px;
+			max-height: 100px;
+		}
 	}
 	// .interesting__grid
 	&__grid {
 		column-count: 4;
 		column-gap: 5%;
+		@media (max-width: 1200px) {
+			column-count: 3;
+		}
+		@media (max-width: 768px) {
+			column-count: 2;
+		}
+		@media (max-width: 576px) {
+			column-count: auto;
+			max-height: 459px;
+			overflow-y: auto;
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: calc(100% - 39px);
+				height: 30px;
+				background: #fff;
+				opacity: 0.85;
+				z-index: 2;
+			}
+		}
 		p {
 			&:not(:last-child) {
 				margin-bottom: 10px;
@@ -81,5 +142,82 @@
 		&:hover {
 			color: $blue;
 		}
+	}
+	/*
+os-theme-round-dark
+*/
+
+	.os-theme-round-dark > .os-scrollbar {
+		padding: 0;
+	}
+	.os-theme-round-dark > .os-scrollbar-horizontal {
+		right: 20px;
+		height: 20px;
+	}
+	.os-theme-round-dark > .os-scrollbar-vertical {
+		bottom: 20px;
+		width: 38px;
+	}
+	.os-theme-round-dark.os-host-rtl > .os-scrollbar-horizontal {
+		left: 20px;
+		right: 0;
+	}
+	.os-theme-round-dark > .os-scrollbar-corner {
+		height: 20px;
+		width: 20px;
+		background-color: transparent;
+	}
+	.os-theme-round-dark > .os-scrollbar > .os-scrollbar-track {
+		background: transparent;
+	}
+	.os-theme-round-dark > .os-scrollbar-horizontal > .os-scrollbar-track:before,
+	.os-theme-round-dark > .os-scrollbar-vertical > .os-scrollbar-track:before {
+		content: "";
+		display: block;
+		position: absolute;
+		background: #dedede;
+	}
+	.os-theme-round-dark > .os-scrollbar-horizontal > .os-scrollbar-track:before {
+		left: 3px;
+		right: 3px;
+		height: 2px;
+		top: 50%;
+		margin-top: -1px;
+	}
+	.os-theme-round-dark > .os-scrollbar-vertical > .os-scrollbar-track:before {
+		top: 3px;
+		bottom: 3px;
+		width: 2px;
+		left: 50%;
+		margin-left: -1px;
+	}
+	.os-theme-round-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+		background: transparent;
+	}
+	.os-theme-round-dark > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:before {
+		content: "";
+		display: block;
+		position: absolute;
+		background: url("../svg/cursor.svg") 50% 50% no-repeat;
+		border-radius: 100%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transform: scale(1);
+	}
+	.os-theme-round-dark > .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle {
+		height: 100%;
+		min-width: 20px;
+		max-width: 20px;
+	}
+	.os-theme-round-dark > .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle {
+		width: 100%;
+		min-height: 38px;
+		max-height: 38px;
+		cursor: pointer;
+	}
+	.os-theme-round-dark.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:before {
+		transition: transform 0.3s;
 	}
 }

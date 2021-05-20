@@ -6,6 +6,22 @@ $(document).ready(function () {
 		inline: true,
 	})
 
+	const interestImg = $('.interesting__image img')
+	const interestGerb = $('.interesting__gerb')
+	const interestLink = $('.interesting__link')
+
+	interestLink.mouseenter(function (ev) {
+		const srcImg = $(ev.target).attr('data-src')
+		const srcGerb = $(ev.target).attr('data-gerb')
+		if (srcImg) {
+			interestImg.attr('src', srcImg)
+		}
+		if (srcGerb) {
+			interestGerb.attr('src', srcGerb)
+		}
+	})
+
+
 
 	// Табы
 	// function tabs(buttonsList, wrapper, tabBlock) {
@@ -48,37 +64,64 @@ $(document).ready(function () {
 
 	// 	})
 	// }
-	// function mobileSlider() {
-	// 	if ($(window).innerWidth() <= 1100) {
-	// 		slider_product_main = new Swiper('.new__slider', {
-	// 			slidesPerView: 2,
-	// 			spaceBetween: 40,
-	// 			navigation: {
-	// 				nextEl: '.new-slider--prev',
-	// 				prevEl: '.new-slider--next',
-	// 			},
-	// 			breakpoints: {
-	// 				320: {
-	// 					slidesPerView: 1,
-	// 					spaceBetween: 45,
-	// 				},
-	// 				376: {
-	// 					slidesPerView: 1,
-	// 					spaceBetween: 45,
-	// 				},
-	// 				630: {
-	// 					slidesPerView: 2,
-	// 					spaceBetween: 45,
-	// 				},
-	// 			}
-	// 		});
-	// 	}
 
-	// 	else {
-	// 		if ($('.new__slider').hasClass('swiper-container-initialized')) {
-	// 			slider_catalog.destroy();
-	// 		}
-	// 	}
+
+	function mobileSlider() {
+		if ($(window).innerWidth() <= 992) {
+			slider_catalog = new Swiper('.top__slider', {
+				slidesPerView: 3,
+				spaceBetween: 40,
+				pagination: {
+					el: '.top__pagination',
+					type: 'bullets',
+					clickable: true
+				},
+				navigation: {
+					nextEl: '.top__next',
+					prevEl: '.top__prev',
+				},
+				breakpoints: {
+					320: {
+						slidesPerView: 1,
+						spaceBetween: 15,
+					},
+					421: {
+						slidesPerView: 2,
+						spaceBetween: 15,
+					},
+					520: {
+						slidesPerView: 2,
+						spaceBetween: 20,
+					},
+					769: {
+						slidesPerView: 3,
+						spaceBetween: 30,
+					},
+					850: {
+						slidesPerView: 3,
+						spaceBetween: 40,
+					},
+				}
+			});
+		}
+
+		else {
+			if ($('.top__slider').hasClass('swiper-container-initialized')) {
+				slider_catalog.destroy();
+			}
+		}
+	}
+
+	mobileSlider()
+
+	if ($(window).innerWidth() < 577) {
+		$('.interesting__grid').overlayScrollbars({
+			className: 'os-theme-round-dark'
+		});
+	}
+
+	// window.onresize = function () {
+	// 	mobileSlider()
 	// }
 
 	const slider_partners = new Swiper('.partners__slider', {
@@ -89,7 +132,7 @@ $(document).ready(function () {
 		// 	delay: 4000,
 		// },
 		pagination: {
-			el: '.swiper-pagination',
+			el: '.partners__pagination',
 			type: 'bullets',
 			clickable: true
 		},

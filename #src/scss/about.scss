@@ -1,11 +1,17 @@
 .about {
 	margin-bottom: 155px;
+	@media (max-width: 1200px) {
+		@include adaptiv(margin-bottom, 155, 52, 1200, 320);
+	}
 	// .about__container
 	&__container {
 	}
 	// .about__title
 	&__title {
 		margin-bottom: 79px;
+		@media (max-width: 1200px) {
+			@include adaptiv(margin-bottom, 79, 30, 1200, 320);
+		}
 	}
 	// .about__flex
 	&__flex {
@@ -26,6 +32,9 @@
 			margin-right: 0;
 			margin-bottom: 40px;
 			flex: 0 0 auto;
+		}
+		@media (max-width: 420px) {
+			margin-bottom: 30px;
 		}
 	}
 	// .about__image
@@ -54,8 +63,8 @@
 		font-size: 50px;
 		line-height: 1.16;
 		@media (max-width: 1400px) {
-			@include adaptiv(font-size, 50, 26, 1400, 320);
-			@include adaptiv(margin-bottom, 73, 25, 1400, 320);
+			@include adaptiv(font-size, 50, 23, 1400, 320);
+			@include adaptiv(margin-bottom, 73, 27, 1400, 320);
 		}
 	}
 	// .right-about__subtitle
@@ -76,8 +85,7 @@
 			font-size: 24px;
 		}
 		@media (max-width: 420px) {
-			font-size: 21px;
-			margin: 0px 0px 15px 0px;
+			font-size: 20px;
 			text-align: center;
 		}
 	}

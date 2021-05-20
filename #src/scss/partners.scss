@@ -1,7 +1,7 @@
 .partners {
 	margin-bottom: 159px;
 	@media (max-width: 1400px) {
-		@include adaptiv(margin-bottom, 159, 40, 1400, 320);
+		@include adaptiv(margin-bottom, 159, 80, 1400, 320);
 	}
 	// .partners__container
 	&__container {
@@ -33,6 +33,16 @@
 		margin-top: 91px;
 		@media (max-width: 768px) {
 			margin-top: 50px;
+		}
+		@media (max-width: 420px) {
+			margin-top: 30px;
+		}
+
+		.control__btn {
+			display: none;
+			@media (max-width: 420px) {
+				display: flex;
+			}
 		}
 	}
 }

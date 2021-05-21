@@ -1,0 +1,168 @@
+.menu {
+	overflow: hidden;
+	flex-grow: 1;
+	position: relative;
+	&-wrapper {
+		position: fixed;
+		height: 100%;
+		width: 470px;
+		right: -470px;
+		top: 0;
+		background: #0b5dc1;
+		z-index: 10;
+		transition: 0.5s right;
+		overflow: hidden;
+		color: #ffffff;
+		display: flex;
+		flex-direction: column;
+	}
+	&-wrapper.active {
+		right: 0;
+	}
+	&-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px 30px;
+	}
+	&-text {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		opacity: 0;
+		visibility: hidden;
+		&__text {
+			white-space: nowrap;
+			max-width: 280px;
+			overflow: hidden;
+			font-size: 20px;
+			line-height: 1.4;
+			font-weight: 700;
+		}
+		&__img {
+			margin-right: 20px;
+		}
+	}
+	&-text.active {
+		opacity: 1;
+		visibility: visible;
+	}
+	&-close {
+		cursor: pointer;
+		width: 20px;
+	}
+	&-bottom {
+		margin-top: 10px;
+		padding: 0px 40px 40px 40px;
+		.social__link {
+			&:hover {
+				border-radius: 100%;
+				background: #ffffff;
+				img {
+					filter: none;
+				}
+			}
+			img {
+				filter: brightness(0%) invert(1);
+			}
+		}
+	}
+	// &-phone {
+	// 	font-weight: 900;
+	// 	font-size: 20px;
+	// 	color: #fff;
+	// }
+	&-item {
+		padding: 20px 40px;
+		overflow: auto;
+		position: absolute;
+		right: -470px;
+		top: 0;
+		transition: 0.5s right;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		flex-grow: 1;
+		z-index: 15;
+		height: 100%;
+		width: 100%;
+		background-color: $blue;
+		&:not(:first-child) {
+			.menu-link {
+				font-size: 16px;
+				line-height: 1.62;
+			}
+		}
+	}
+	&-item .os-content {
+		display: flex;
+		flex-direction: column;
+	}
+	&-item.active {
+		right: 0;
+		z-index: 20;
+		position: relative;
+	}
+	&-link {
+		font-size: 18px;
+		line-height: 1.44;
+		color: #ffffff;
+		transition: 0.3s;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+		&:hover {
+			color: #90c1fe;
+		}
+
+		&.active {
+			color: #90c1fe;
+		}
+	}
+}
+@media (max-width: 1000px) {
+	.menu {
+		&-wrapper {
+			width: 450px;
+			right: -450px;
+		}
+		&-item {
+			right: -450px;
+		}
+		&-link {
+			font-size: 22px;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.menu {
+		&-wrapper {
+			width: 375px;
+			right: -375px;
+		}
+		&-item {
+			right: -375px;
+		}
+		&-text {
+			&__img {
+				margin-right: 10px;
+			}
+			&__text {
+				max-width: 200px;
+			}
+		}
+	}
+}
+
+@media (max-width: 450px) {
+	.menu {
+		&-wrapper {
+			width: 100%;
+			right: -100%;
+		}
+		&-item {
+			right: -100%;
+		}
+	}
+}

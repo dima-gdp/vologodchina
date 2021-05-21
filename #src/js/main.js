@@ -21,6 +21,36 @@ $(document).ready(function () {
 		}
 	})
 
+	const search = $('.search--animated')
+	const searchBtnOpen = $('.header__btn-search')
+	const searchBtnClose = $('.search__close')
+	const searchBtnClear = $('.search__clear')
+	const searchBtnInput = $('.search__input input')
+
+
+
+	$(searchBtnOpen).on('click', function () {
+		search.stop().slideDown()
+	})
+	$(searchBtnClose).on('click', function () {
+		search.stop().slideUp()
+	})
+	$(searchBtnClear).on('click', function () {
+		searchBtnInput.val('')
+		searchBtnClear.removeClass('search__clear--visible')
+	})
+
+	$(searchBtnInput).on('input', function () {
+		if (searchBtnInput.val() !== '') {
+			searchBtnClear.addClass('search__clear--visible')
+		} else {
+			searchBtnClear.removeClass('search__clear--visible')
+		}
+	})
+
+
+
+
 
 
 	// Табы
@@ -253,4 +283,119 @@ $(document).ready(function () {
 	// 		return false;
 	// 	}
 	// });
+
+
+
+	const menu = document.querySelector(".menu-wrapper");
+	const menuText = document.querySelector(".menu-text");
+	const menuTextContent = document.querySelector(".menu-text__text");
+	const menuItems = Array.from(document.querySelectorAll(".menu-item"));
+	const burger = $('.header__burger')
+
+	burger.on('click', function () {
+		menu.classList.add('active')
+	})
+
+
+	let menuCurrent = "main",
+		currentTarget;
+
+	OverlayScrollbars(document.querySelectorAll(".menu-item"), {});
+
+	function returnMenuItem(items, compare) {
+		return items.find(function (item) {
+			return item.dataset.menu === compare;
+		});
+	}
+
+	function destroyMenu() {
+		menu.classList.remove("active");
+		menuCurrent = "main";
+
+		menuItems.forEach(function (item) {
+			item.classList.remove("active");
+		});
+
+		returnMenuItem(menuItems, menuCurrent).classList.add("active");
+		menuText.classList.remove("active");
+	}
+
+	document.addEventListener("click", function (event) {
+		const { target } = event;
+
+		if (target.matches(".menu-link_clickable")) {
+			event.preventDefault();
+
+			menuCurrent = target.dataset.menu;
+
+			currentTarget = returnMenuItem(menuItems, menuCurrent);
+
+			menuItems.forEach(function (item) {
+				item.classList.remove("active");
+			});
+
+			currentTarget.classList.add("active");
+
+			if (!menuText.classList.contains("active")) {
+				menuText.classList.add("active");
+			}
+
+			menuTextContent.textContent = currentTarget.dataset.text;
+		}
+
+		//Пойти назад в меню
+
+		if (target.closest(".menu-text.active")) {
+			currentTarget.classList.remove("active");
+			let parent = currentTarget.dataset.parent;
+
+			currentTarget = returnMenuItem(menuItems, parent);
+			let parentText = currentTarget.dataset.text;
+
+			currentTarget.classList.add("active");
+			menuCurrent = parent;
+
+			if (parent === "main") {
+				menuText.classList.remove("active");
+			} else {
+				menuText.dataset.menu = parent;
+				menuTextContent.textContent = parentText;
+			}
+		}
+
+		if (
+			target.matches(".menu-close") ||
+			(!target.closest(".menu-wrapper") && menu.classList.contains("active"))
+		) {
+			event.preventDefault();
+			destroyMenu();
+		}
+
+		if (target.closest(".header__burger") || target.closest(".catalog-menu__mobile")) {
+			menu.classList.add("active");
+		}
+	});
+
+
+
+
+
+	if ($(window).innerWidth() >= 1201) {
+		const hiddenItem = $('.hidden-item');
+		const image = $('.hidden-item img');
+		const height = hiddenItem.innerHeight() / 2;
+		const width = hiddenItem.innerWidth() / 2;
+
+		hiddenItem.mousemove(function (event) {
+			var x = (event.offsetX - width) / 10;
+			var y = (event.offsetY - height) / 10;
+
+			image.css('transform', `translate(${x}px, ${y}px)`);
+		});
+
+		hiddenItem.mouseleave(function () {
+			image.css('transform', 'translate(0px, 0px)');
+		})
+	}
+
 });

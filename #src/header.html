@@ -41,11 +41,144 @@
 
 		@@include('modal-polit.html')
 		@@include('modal.html')
-		<!-- @@include('mobile-menu.html') -->
+
+		<div class="menu-wrapper">
+			<div class="menu-top">
+				<div class="menu-text">
+					<img src="svg/menu-left-arrow.svg" alt="arrow" class="menu-text__img">
+					<div class="menu-text__text"></div>
+				</div>
+				<img src="svg/cross.svg" alt="cross" class="menu-close">
+			</div>
+			<div class="menu">
+
+				<div class="menu-item active" data-menu="main">
+					<a href="#" class="menu-link menu-link_clickable active" data-menu="0">Вологодская область</a>
+					<a href="#" class="menu-link">Места</a>
+					<a href="#" class="menu-link">Календарь событий</a>
+					<a href="#" class="menu-link">Новости</a>
+					<a href="#" class="menu-link">Экономика</a>
+					<a href="#" class="menu-link">Информация</a>
+					<a href="#" class="menu-link">О нас</a>
+				</div>
+
+				<div class="menu-item" data-menu="0" data-parent="main" data-text="Вологодская область">
+					<a href="#" class="menu-link">Географическое положение</a>
+					<a href="#" class="menu-link">Терасная доска</a>
+					<a href="#" class="menu-link">История</a>
+					<a href="#" class="menu-link">Население</a>
+					<a href="#" class="menu-link">Транспорт</a>
+					<a href="#" class="menu-link">Климат</a>
+					<a href="#" class="menu-link">Водные пути</a>
+					<a href="#" class="menu-link">Знаменитые люди</a>
+				</div>
+
+			</div>
+			<div class="menu-bottom">
+				<div class="social">
+					<a class="social__link" href="#">
+						<img src="svg/vk.svg" />
+					</a>
+					<a class="social__link" href="#">
+						<img src="svg/fb.svg" />
+					</a>
+					<a class="social__link" href="#">
+						<img src="svg/instagram.svg" />
+					</a>
+				</div>
+			</div>
+		</div>
 
 		<header class="header">
 			<div class="header__container container">
-
+				<div class="header__flex">
+					<a href="#" class="header__logo logo">
+						<div class="logo__img">
+							<img src="img/logo.png" alt="logo">
+						</div>
+						<div class="logo__text">
+							<p>Русское географическое общество</p>
+							<p>С любовью к Вологодской земле</p>
+						</div>
+					</a>
+					<nav class="header__nav">
+						<ul class="header__menu">
+							<li class="active have-menu">
+								<a href="#">Вологодская область</a>
+								<ul class="header__submenu">
+									<li>
+										<a href="#">Географическое положение</a>
+									</li>
+									<li class="active">
+										<a href="#">Административное устройство</a>
+									</li>
+									<li>
+										<a href="#">История</a>
+									</li>
+									<li>
+										<a href="#">Население</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">Места</a>
+							</li>
+							<li>
+								<a href="#">Календарь событий</a>
+							</li>
+							<li>
+								<a href="#">Новости</a>
+							</li>
+							<li>
+								<a href="#">Экономика</a>
+							</li>
+							<li>
+								<a href="#">Информация</a>
+							</li>
+							<li>
+								<a href="#">О нас</a>
+							</li>
+						</ul>
+					</nav>
+					<div class="header__social">
+						<div class="social">
+							<a class="social__link" href="#">
+								<img src="svg/vk.svg" />
+							</a>
+							<a class="social__link" href="#">
+								<img src="svg/fb.svg" />
+							</a>
+							<a class="social__link" href="#">
+								<img src="svg/instagram.svg" />
+							</a>
+						</div>
+					</div>
+					<div class="header__right">
+						<button class="header__btn-search">
+							<svg>
+								<use xlink:href="#search"></use>
+							</svg>
+						</button>
+						<a href="#" class="header__login">
+							<svg>
+								<use xlink:href="#login"></use>
+							</svg>
+						</a>
+					</div>
+					<button class="header__burger">
+						<span class="burger">
+							<span></span>
+						</span>
+					</button>
+				</div>
 			</div>
-
 		</header>
+		<div class="search search--animated">
+			<form class="search__form">
+				<label class="search__input">
+					<input type="text" placeholder="Достопримечательности Белозерск">
+					<button class="search__clear" type="button"></button>
+				</label>
+				<button class="search__close" type="button"></button>
+			</form>
+		</div>

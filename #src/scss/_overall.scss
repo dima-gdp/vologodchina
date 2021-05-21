@@ -91,6 +91,79 @@ body {
 	}
 }
 
+.search {
+	padding: 37px 20px;
+	@media (max-width: 576px) {
+		padding: 25px 20px;
+	}
+	// .search__form
+	&__form {
+		max-width: 858px;
+		width: 100%;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+	}
+	// .search__input
+	&__input {
+		margin-right: 17px;
+		flex: 1 1 auto;
+		position: relative;
+		@media (max-width: 576px) {
+			margin-right: 10px;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: calc(50% - 10px);
+			left: 30px;
+			width: 20px;
+			height: 20px;
+			background: url("../svg/search.svg") 50% 50% / cover no-repeat;
+			@media (max-width: 576px) {
+				display: none;
+			}
+		}
+		input {
+			display: block;
+			padding: 20px 63px 20px 63px;
+			width: 100%;
+			background: #ffffff;
+			border: 1px solid #000000;
+			border-radius: 50px;
+			font-size: 18px;
+			color: #000000;
+			@media (max-width: 576px) {
+				padding: 15px 20px 15px 20px;
+				font-size: 16px;
+			}
+		}
+	}
+	// .search__close
+	&__close {
+		transform: rotate(45deg);
+		@include cross(26px, 26px);
+	}
+
+	&__clear {
+		display: none;
+		@include cross(16px, 16px);
+		position: absolute;
+		top: calc(50% - 8px);
+		right: 27px;
+		transform: rotate(45deg);
+		&--visible {
+			display: flex;
+		}
+		@media (max-width: 576px) {
+			display: none;
+		}
+	}
+	&--animated {
+		display: none;
+	}
+}
+
 .btn {
 	display: flex;
 	justify-content: center;
@@ -184,7 +257,8 @@ input[type="submit"] {
 			&:hover {
 				background: #0b5dc1;
 				img {
-					filter: invert(1);
+					transition: 0.3s;
+					filter: brightness(0%) invert(1);
 				}
 			}
 		}
@@ -196,6 +270,7 @@ input[type="submit"] {
 		img {
 			max-width: 23px;
 			max-height: 23px;
+			filter: brightness(0%);
 		}
 	}
 }
@@ -215,7 +290,7 @@ input[type="submit"] {
 	// overflow: hidden;
 	&:hover {
 		.hexagon__image {
-			transform: rotate(30deg);
+			transform: rotate(1440deg);
 		}
 	}
 	&__wrapper {
@@ -240,7 +315,7 @@ input[type="submit"] {
 		}
 	}
 	&__image {
-		transition: transform 1s linear;
+		transition: transform 7s linear;
 	}
 }
 

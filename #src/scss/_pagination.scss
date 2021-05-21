@@ -5,7 +5,7 @@
 	a {
 		transition: 0.3s;
 		&:hover {
-			color: #01873d;
+			color: $blue;
 		}
 	}
 	.prev,
@@ -13,18 +13,33 @@
 	.dots {
 		font-weight: 300;
 		font-size: 18px;
-		line-height: 1.56;
+		line-height: 1.44;
 		color: #000000;
 	}
 
 	.prev,
 	.next {
-		@media (max-width: 647px) {
-			span {
-				display: none;
+		svg {
+			width: 50px;
+			height: 60px;
+			fill: #90c1fe;
+			@media (max-width: 992px) {
+				width: 40px;
+				height: 50px;
 			}
-			font-size: 20px;
-			min-width: 35px;
+			@media (max-width: 630px) {
+				width: 30px;
+				height: 40px;
+			}
+			@media (max-width: 375px) {
+				width: 20px;
+				height: 30px;
+			}
+		}
+		&:hover {
+			svg {
+				fill: $blue;
+			}
 		}
 		@media (max-width: 450px) {
 			min-width: 25px !important;
@@ -34,11 +49,11 @@
 
 	.prev {
 		margin-right: 27px !important;
-		@media (max-width: 955px) {
+		@media (max-width: 630px) {
 			margin-right: 12px !important;
 		}
 		@media (max-width: 450px) {
-			margin-right: 1px !important;
+			margin-right: 5px !important;
 		}
 	}
 	.page-numbers {
@@ -55,34 +70,36 @@
 		&:not(:last-child) {
 			margin-right: 15px;
 			@media (max-width: 955px) {
+				margin-right: 10px;
+			}
+			@media (max-width: 630px) {
+				min-width: 35px;
+				min-height: 35px;
+			}
+			@media (max-width: 480px) {
 				margin-right: 5px;
 			}
-			@media (max-width: 374px) {
-				margin-right: 1px;
-			}
+			// @media (max-width: 374px) {
+			// 	margin-right: 1px;
+			// }
 		}
-		@media (max-width: 955px) {
+		@media (max-width: 630px) {
 			font-size: 17px;
-			min-width: 35px;
-			min-height: 35px;
-		}
-		@media (max-width: 450px) {
-			font-size: 15px;
 		}
 	}
 	.dots {
 		@media (max-width: 647px) {
-			min-width: 25px;
+			min-width: 20px !important;
 		}
 	}
 	.current {
-		background: #01873d;
+		background: $blue;
 		border-radius: 100%;
 		color: #fff;
 	}
 	.next {
 		margin-left: 12px;
-		@media (max-width: 955px) {
+		@media (max-width: 630px) {
 			margin-left: 3px;
 		}
 	}

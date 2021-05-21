@@ -161,6 +161,7 @@
 	.-selected- {
 		color: #fff;
 		background: #0b5dc1;
+		border-radius: 30px;
 	}
 
 	.-other-month- {
@@ -178,9 +179,11 @@
 	}
 	.datepicker--cell-month.-current- {
 		border: 1px solid $blue;
+		border-radius: 30px;
 	}
 	.datepicker--cell-year.-current- {
 		border: 1px solid $blue;
+		border-radius: 30px;
 	}
 	.datepicker--days-names {
 		margin: 0;

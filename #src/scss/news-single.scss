@@ -1,14 +1,40 @@
 .news-single {
 	padding-bottom: 173px;
+	@media (max-width: 1200px) {
+		@include adaptiv(padding-bottom, 173, 50, 1919, 320);
+	}
 	// .news-single__container
 	&__container {
 	}
 	// .news-single__grid
 	&__grid {
 		margin-bottom: 137px;
+		margin-top: -100px;
+		@media (max-width: 1180px) {
+			margin-top: 60px;
+			@include adaptiv(margin-bottom, 137, 40, 1180, 320);
+		}
+		@media (max-width: 576px) {
+			margin-top: 40px;
+		}
+		@media (max-width: 420px) {
+			margin-top: 30px;
+		}
 	}
 	// .news-single__title
 	&__title {
+		max-width: calc(50% - 40px);
+		@media (max-width: 1600px) {
+			@include adaptiv(font-size, 72, 50, 1600, 1300);
+		}
+		@media (max-width: 1300px) {
+			&.title--s {
+				@include adaptiv(font-size, 50, 27, 1300, 320);
+			}
+		}
+		@media (max-width: 1180px) {
+			max-width: none;
+		}
 	}
 	// .news-single__image
 	&__image {
@@ -23,12 +49,33 @@
 			height: 60px;
 			fill: #90c1fe;
 			transition: 0.3s;
+			@media (max-width: 768px) {
+				width: 40px;
+				height: 50px;
+			}
+			@media (max-width: 576px) {
+				width: 30px;
+				height: 40px;
+			}
 		}
 		a {
 			font-weight: 700;
 			font-size: 20px;
 			line-height: 1.4;
 			color: #000000;
+			@media (max-width: 768px) {
+				font-size: 17px;
+			}
+			@media (max-width: 576px) {
+				span {
+					font-size: 14px;
+				}
+			}
+			@media (max-width: 460px) {
+				span {
+					display: none;
+				}
+			}
 		}
 	}
 	// .news-single__prev
@@ -61,9 +108,68 @@
 
 .columns-2 {
 	column-count: 2;
-	column-gap: 10%;
+	column-gap: 5%;
 	// column-width: 600px;
-	&__image {
+	@media (max-width: 1180px) {
+		column-count: 1;
+	}
+
+	ul,
+	ol,
+	p,
+	&__img-wrapper {
+		padding-left: 90px;
+		// padding-right: 30px;
+		@media (max-width: 1180px) {
+			padding-left: 0;
+		}
+	}
+
+	h2 {
+		@media (max-width: 1600px) {
+			@include adaptiv(font-size, 50, 30, 1600, 1180);
+		}
+		@media (max-width: 1200px) {
+			font-size: 30px;
+		}
+		@media (max-width: 1180px) {
+			@include adaptiv(font-size, 40, 23, 1180, 320);
+		}
+		@media (max-width: 420px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	.margin {
+		margin-top: 200px;
+		@media (max-width: 1180px) {
+			margin-top: 0;
+		}
+	}
+
+	&__img-wrapper {
+		max-width: 685px;
 		margin-bottom: 90px;
+		position: relative;
+		@media (max-width: 1180px) {
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 595px;
+			@include adaptiv(margin-bottom, 90, 30, 1180, 320);
+		}
+
+		& > img {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	&__image {
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+		border-radius: 100%;
 	}
 }

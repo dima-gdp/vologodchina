@@ -1,0 +1,116 @@
+.placeses {
+	margin-bottom: 131px;
+	@media (max-width: 1200px) {
+		@include adaptiv(padding-bottom, 131, 50, 1200, 320);
+	}
+	// .placeses__container
+	&__container {
+	}
+	// .placeses__title
+	&__title {
+	}
+	// .placeses__grid
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 60px;
+		grid-row-gap: 60px;
+		margin-bottom: 77px;
+		@media (max-width: 1200px) {
+			grid-column-gap: 40px;
+			grid-row-gap: 40px;
+		}
+		@media (max-width: 992px) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-column-gap: 40px;
+			grid-row-gap: 40px;
+		}
+		@media (max-width: 768px) {
+			grid-column-gap: 30px;
+			margin-bottom: 60px;
+		}
+		@media (max-width: 576px) {
+			grid-template-columns: repeat(1, minmax(280px, 400px));
+			justify-content: center;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+		@media (max-width: 420px) {
+			grid-row-gap: 30px;
+			margin-bottom: 30px;
+		}
+	}
+	// .placeses__col
+	&__col {
+		&:nth-child(1),
+		&:nth-child(5),
+		&:nth-child(9),
+		&:nth-child(11) {
+			.item-top__image {
+				border-radius: 100%;
+			}
+		}
+
+		&:nth-child(2),
+		&:nth-child(6),
+		&:nth-child(7),
+		&:nth-child(10) {
+			.item-top__image {
+				border-top-left-radius: 50%;
+				border-top-right-radius: 50%;
+			}
+		}
+	}
+	// .placeses__item
+	&__item {
+		.item-top__image {
+			padding-bottom: 100%;
+			@media (max-width: 420px) {
+				margin-bottom: 15px;
+			}
+		}
+		.item-top__title {
+			font-size: 30px;
+			line-height: 1.27;
+			@media (max-width: 1600px) {
+				@include adaptiv(font-size, 30, 22, 1600, 992);
+			}
+			@media (max-width: 992px) {
+				@include adaptiv(font-size, 30, 21, 992, 576);
+			}
+			@media (max-width: 576px) {
+				@include adaptiv(font-size, 28, 19, 576, 320);
+			}
+		}
+
+		.item-top__subtitle {
+			font-size: 18px;
+			line-height: 1.44;
+			color: #000;
+			@media (max-width: 1300px) {
+				font-size: 17px;
+			}
+			@media (max-width: 1100px) {
+				font-size: 16px;
+			}
+			@media (max-width: 768px) {
+				font-size: 17px;
+			}
+			@media (max-width: 650px) {
+				font-size: 16px;
+			}
+			@media (max-width: 576px) {
+				font-size: 18px;
+			}
+			@media (max-width: 420px) {
+				font-size: 17px;
+			}
+			@media (max-width: 374px) {
+				font-size: 16px;
+			}
+		}
+	}
+	// .placeses__pagination
+	&__pagination {
+	}
+}

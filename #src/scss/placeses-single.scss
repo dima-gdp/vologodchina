@@ -1,0 +1,40 @@
+.placeses-single {
+	margin-top: 197px;
+	margin-bottom: 113px;
+	@media (max-width: 1200px) {
+		@include adaptiv(margin-bottom, 113, 50, 1200, 320);
+		@include adaptiv(margin-top, 197, 50, 1200, 320);
+	}
+	// .placeses-single__container
+	&__container {
+	}
+	// .placeses-single__tags
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -12px;
+		@media (max-width: 576px) {
+			justify-content: center;
+		}
+		li {
+			padding: 0px 12px 12px 12px;
+		}
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			font-weight: 700;
+			font-size: 30px;
+			line-height: 1.27;
+			color: #000000;
+			transition: 0.3s;
+			@media (max-width: 992px) {
+				@include adaptiv(font-size, 30, 16, 992, 320);
+			}
+			&:hover {
+				color: $blue;
+			}
+		}
+	}
+}

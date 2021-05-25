@@ -43,6 +43,7 @@ $blue: #0b5dc1;
 		content: "";
 		position: absolute;
 		background: #000;
+		transition: background 0.3s;
 	}
 	&::after {
 		top: 50%;

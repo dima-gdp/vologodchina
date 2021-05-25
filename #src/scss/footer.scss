@@ -76,14 +76,18 @@
 		@media (max-width: 1300px) {
 			flex-direction: column;
 			justify-content: flex-start;
-			// align-items: center;
-			// text-align: center;
 		}
 		ul {
+			flex: 0 1 auto;
+			max-width: 50%;
+			@media (max-width: 1300px) {
+				max-width: none;
+				flex: 0 0 auto;
+			}
 			&:first-child {
-				margin-right: 45px;
+				padding-right: 45px;
 				@media (max-width: 1300px) {
-					margin-right: 0;
+					padding-right: 0;
 				}
 			}
 		}

@@ -319,6 +319,7 @@ input[type="submit"] {
 		text-align: center;
 		color: #ffffff;
 		z-index: 1;
+		overflow: hidden;
 		@media (max-width: 420px) {
 			font-size: 16px;
 		}
@@ -552,13 +553,13 @@ input[type="submit"] {
 	}
 	// .right-slider__title
 	&__title {
-		margin-bottom: 53px;
+		margin-bottom: 53px !important;
 
 		@media (max-width: 576px) {
-			margin-bottom: 40px;
+			margin-bottom: 40px !important;
 		}
 		@media (max-width: 420px) {
-			margin-bottom: 35px;
+			margin-bottom: 35px !important;
 		}
 	}
 	// .right-slider__content
@@ -655,15 +656,15 @@ input[type="submit"] {
 	}
 	// .history__title
 	&__title {
-		margin-bottom: 65px;
+		margin-bottom: 65px !important;
 		@media (max-width: 768px) {
-			margin-bottom: 50px;
+			margin-bottom: 50px !important;
 		}
 		@media (max-width: 576px) {
-			margin-bottom: 40px;
+			margin-bottom: 40px !important;
 		}
 		@media (max-width: 420px) {
-			margin-bottom: 30px;
+			margin-bottom: 30px !important;
 		}
 	}
 	// .history__content

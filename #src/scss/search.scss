@@ -49,6 +49,10 @@
 		@media (max-width: 420px) {
 			font-size: 18px;
 		}
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 .item-search-page {

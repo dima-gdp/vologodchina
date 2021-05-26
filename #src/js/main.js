@@ -455,7 +455,8 @@ $(document).ready(function () {
 
 	const select = $('.placeses-select').select2({
 		width: '100%',
-		placeholder: "Введите, что вас интересует"
+		placeholder: "Введите, что вас интересует",
+		language: 'ru'
 	});
 
 	$('.result-placeses__clear').click(function () {

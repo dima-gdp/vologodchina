@@ -4,7 +4,7 @@
 	margin-bottom: 76px;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: 50% 50%;
+	background-position: 0 100%;
 	@media (max-width: 1660px) {
 		@include adaptiv(padding-bottom, 242, 130, 1660, 1220);
 	}

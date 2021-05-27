@@ -11,14 +11,34 @@
 	line-height: 1.5;
 	color: #000000;
 	margin-right: 20px;
+	@media (max-width: 576px) {
+		margin-right: 10px;
+		font-size: 15px;
+	}
+	@media (max-width: 420px) {
+		font-size: 14px;
+	}
 }
 .breadcrumbs-break {
 	font-size: 16px;
 	color: #000000;
 	margin: 0px 20px 0px 0px;
+	@media (max-width: 576px) {
+		margin: 0px 10px 0px 0px;
+		font-size: 15px;
+	}
+	@media (max-width: 420px) {
+		font-size: 14px;
+	}
 }
 .itog-breadcrumbs {
 	font-size: 16px;
 	line-height: 1.5;
 	color: $blue;
+	@media (max-width: 576px) {
+		font-size: 15px;
+	}
+	@media (max-width: 420px) {
+		font-size: 14px;
+	}
 }

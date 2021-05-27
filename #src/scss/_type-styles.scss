@@ -146,6 +146,9 @@
 			@media (max-width: 768px) {
 				padding: 10px 15px;
 			}
+			@media (max-width: 420px) {
+				font-size: 18px;
+			}
 			&:first-child {
 				border-left: none;
 			}

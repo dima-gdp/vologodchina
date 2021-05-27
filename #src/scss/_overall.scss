@@ -299,7 +299,9 @@ input[type="submit"] {
 	// overflow: hidden;
 	&:hover {
 		.hexagon__image {
-			transform: rotate(1440deg);
+			animation-name: hexagon;
+			animation-duration: 1s;
+			animation-timing-function: linear;
 		}
 	}
 	&__wrapper {
@@ -325,7 +327,6 @@ input[type="submit"] {
 		}
 	}
 	&__image {
-		transition: transform 7s linear;
 	}
 }
 
@@ -693,5 +694,14 @@ input[type="submit"] {
 	}
 	100% {
 		transform: translateX(-100%);
+	}
+}
+
+@keyframes hexagon {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
 	}
 }

@@ -130,7 +130,8 @@
 	height: 100%;
 	&:hover {
 		.item-top__image img {
-			transform: scale(1.1);
+			width: 105%;
+			height: 105%;
 		}
 		.item-top__title {
 			color: $blue;
@@ -154,14 +155,15 @@
 		}
 		img {
 			position: absolute;
-			top: 0;
-			left: 0;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
 			object-position: center;
 			font-family: "object-fit: cover; object-position: center;";
-			transition: 0.3s;
+			transition: width 0.3s linear, height 0.3s linear;
 		}
 	}
 	// .item-top__count
@@ -236,6 +238,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			text-align: center;
 			font-size: 16px;
 			line-height: 1.44;
 			color: #0b5dc1;

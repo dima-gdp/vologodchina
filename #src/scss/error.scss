@@ -1,9 +1,9 @@
 .error {
 	padding-top: 70px;
-	margin-bottom: 269px;
+	margin-bottom: 110px;
 	@media (max-width: 1200px) {
 		@include adaptiv(padding-top, 70, 5, 1200, 320);
-		@include adaptiv(margin-bottom, 269, 55, 1200, 320);
+		@include adaptiv(margin-bottom, 110, 45, 1200, 320);
 	}
 	// .error__container
 	&__container {

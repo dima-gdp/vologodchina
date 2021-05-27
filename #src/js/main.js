@@ -198,13 +198,28 @@ $(document).ready(function () {
 		}
 	});
 
+	const slider_banner = new Swiper('.banner__slider', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		autoHeight: true,
+		loop: false,
+		// autoplay: {
+		// 	delay: 4000,
+		// },
+		pagination: {
+			el: '.banner__pagination',
+			type: 'bullets',
+			clickable: true
+		},
+	});
+
 	// Fancy-box
 
-	// $('[data-src="#modal-polit"]').fancybox({
-	// 	touch: 'false',
-	// 	smallBtn: false,
-	// 	buttons: '',
-	// });
+	$('[data-src="#modal-polit"]').fancybox({
+		touch: 'false',
+		smallBtn: false,
+		buttons: '',
+	});
 
 	// $('[data-src="#home-modal"]').fancybox({
 	// 	touch: 'false',

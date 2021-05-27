@@ -57,6 +57,10 @@
 				width: 30px;
 				height: 40px;
 			}
+			@media (max-width: 374px) {
+				width: 25px;
+				height: 25px;
+			}
 		}
 		a {
 			font-weight: 700;
@@ -73,7 +77,13 @@
 			}
 			@media (max-width: 460px) {
 				span {
-					display: none;
+					width: 85px;
+					text-align: center;
+				}
+			}
+			@media (max-width: 374px) {
+				span {
+					font-size: 13px;
 				}
 			}
 		}
@@ -84,6 +94,9 @@
 		align-items: center;
 		span {
 			margin-left: 20px;
+			@media (max-width: 460px) {
+				margin-left: 10px;
+			}
 		}
 		&:hover {
 			svg {
@@ -97,6 +110,9 @@
 		align-items: center;
 		span {
 			margin-right: 20px;
+			@media (max-width: 460px) {
+				margin-right: 10px;
+			}
 		}
 		&:hover {
 			svg {

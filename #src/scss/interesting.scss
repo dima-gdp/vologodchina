@@ -112,11 +112,15 @@
 				bottom: 0;
 				left: 0;
 				width: calc(100% - 39px);
-				height: 30px;
-				background: #fff;
+				height: 40px;
+				background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
 				opacity: 0.85;
 				z-index: 2;
+				pointer-events: none;
 			}
+		}
+		@media (max-width: 420px) {
+			max-height: 350px;
 		}
 		p {
 			&:not(:last-child) {
@@ -146,6 +150,14 @@
 	/*
 os-theme-round-dark
 */
+}
+
+.os-content {
+	p {
+		&:last-child {
+			margin-bottom: 25px;
+		}
+	}
 }
 
 .os-theme-round-dark > .os-scrollbar {
